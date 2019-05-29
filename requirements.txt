@@ -1,0 +1,4 @@
+Flask
+gunicorn
+httplib2
+requests

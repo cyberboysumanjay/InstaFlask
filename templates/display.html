@@ -1,0 +1,38 @@
+{% extends "index.html" %} {% block content %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Details fetched!</strong> Now you can stalk the user....
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="text-center">
+    <img src="{{ dp_url }}" class="rounded mx-auto d-block" alt="Instagram DP">
+</div>
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Here are the details of {{ fullname }}!</h4>
+    <hr>
+    <p class="mb-0">This profile seriously looks interesting.</p>
+</div>
+
+<div class="alert alert-primary" role="alert">
+    Username: {{ username }}<br><br>
+    Fullname: {{ fullname }}<br><br>
+    Biography: {{ bio }}<br><br>
+    Private Profile: {{ private_profile }}<br><br>
+    Verified Profile: {{ is_verified }}<br><br>
+    Anonymous Profile Pic: {{ anonymous_profile_pic }}<br><br>
+    Total Posts: {{ total_posts }}<br><br>
+    Followers: {{ followers }}<br><br>
+    Following: {{ following }}<br><br>
+    External URL: {{ external_url }}<br><br>
+    May be fraud profile: {{ report_fraud }}
+</div>
+
+<div class="col-md-12 text-center btn-group">
+  <a href="{{ hd_dp_url }}" class="btn btn-outline-primary" role="button" aria-disabled="true">HD DP</a>
+  <a href="{{ url_for('home') }}" class="btn btn-outline-primary" role="button" aria-disabled="true">Check another profile</a>
+</div>
+
+{% endblock %}

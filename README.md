@@ -4,10 +4,10 @@
 ## Screenshots:
 
 ### Homepage: 
-![homepage](https://tinyimg.io/i/Mya0Vxr.jpg height="625" width="500")
+<img src="https://tinyimg.io/i/Mya0Vxr.jpg" height="625" width="500">
 
 ### Details page: 
-![detailspage](https://tinyimg.io/i/bPeUZu1.jpg height="1600" width="500")
+<img src="https://tinyimg.io/i/bPeUZu1.jpg" height="1600" width="500">
 
 --------------------
 You can also deploy it to Heroku in case you want your own version of InstaFetcher!

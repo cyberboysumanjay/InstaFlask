@@ -14,7 +14,7 @@ You can also deploy it to Heroku in case you want your own version of InstaFetch
 
 Just fork and click on "Deploy to Heroku Button"
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cyberboysumanjay/instaflask/tree/master)
 
 
 © [Sumanjay](https://cyberboysumanjay.github.io)

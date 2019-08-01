@@ -1,5 +1,5 @@
 {% extends "index.html" %} {% block content %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div class="text-center alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Details fetched!</strong> Now you can stalk the user....
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -10,13 +10,13 @@
     <img src="{{ dp_url }}" class="rounded mx-auto d-block" alt="Instagram DP">
 </div>
 
-<div class="alert alert-success" role="alert">
+<div class="text-center alert alert-success" role="alert">
     <h4 class="alert-heading">Here are the details of {{ fullname }}!</h4>
     <hr>
     <p class="mb-0">This profile seriously looks interesting.</p>
 </div>
 
-<div class="alert alert-primary" role="alert">
+<div class="text-center alert alert-primary" role="alert">
     Username: {{ username }}<br><br>
     Fullname: {{ fullname }}<br><br>
     Biography: {{ bio }}<br><br>

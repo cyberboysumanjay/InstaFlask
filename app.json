@@ -1,10 +1,11 @@
 {
   "name": "InstaFlask",
-  "description": "Python-ica-Flask way to view Instagram Profile and fetch HD DP of users.",
+  "description": "Python-ica-Flask way to view Instagram Profile, Download HD DP/Photo/Video of users from link.",
   "keywords": [
     "flask",
     "python",
     "instagram"
+    "downloader"
   ],
   "repository": "https://github.com/cyberboysumanjay/InstaFlask"
 }

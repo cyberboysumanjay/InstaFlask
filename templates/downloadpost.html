@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>InstaFlask</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -15,8 +16,8 @@
   </div>
 
     <div class="text-center">
-        <form class="form-download" method="POST" id="download" action="/details">
-            <h1 class="form-download-heading display-4">Instagram Data Fetcher</h1>
+        <form class="form-download" method="POST" id="download" action="/post">
+            <h1 class="form-download-heading display-4">Instagram Fetcher</h1>
             <p>Made with 💖 by <a href="https://cyberboysumanjay.github.io">Sumanjay</a>
     </div>
 
@@ -27,45 +28,33 @@
 
     <div class="form-group">
         <div class="input-group p-3 mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text">https://instagram.com/</span>
-            </div>
-
-            <input type="text" class="form-control" name="userid" placeholder="Enter username" >
+            <input type="text" class="form-control" name="postlink" placeholder="Enter Public Post link only!" >
         </div>
     </div>
 
     <div class="text-center">
-      <span class="form-text"><b>Example:</b> <a href="https://www.instagram.com/sumanjay_">https://www.instagram.com/<b>sumanjay_</b></a></span>
+      <span class="form-text"><b>Example:</b> <a
+        href="https://www.instagram.com/p/B0RDOaRHABr/">https://www.instagram.com<b>/p/B0RDOaRHABr/</b></a></span>
     </div>
     <div>
         <br><br>
     </div>
     <div class="text-center">
-      <input class="btn btn-primary btn-lg" type="submit" name="type" id="type" value="Fetch">
+      <input class="btn btn-primary btn-lg" type="submit" name="type" id="type" value="Download">
       <a href="https://www.instagram.com/sumanjay_" class="btn btn-primary btn-lg" role="button">Follow me</a>
-    </div>
-    <div class="text-center">
-        <br>
-        <a href="/post" class="btn btn-primary btn-lg" role="button">Post Downloader</a>
+    
     </div>
 
     {% endblock %}
-        <div>
-            <br>
-        </div>
 
-        <div class="text-center">
-            <p><strong>Visitors Count</strong></p>
-            <a href="#" title="Counter"><img
-                    src="https://counter7.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=54bfsfnzbfjxyjeprpnqgpdktmt3eecc"
-                    border="0" title="Counter" alt="Counter"></a>
-        </div>
-        
-        <div class="footer text-center">
-            <br>
-            <p>&copy; <strong>Sumanjay | All rights reserved.</strong></p>
-        </div>
+    <div>
+      <br>
+    </div>
+
+    <div class="text-center">
+        <p>Visitors</p>
+        <a href="#" title="Counter"><img src="https://counter7.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=54bfsfnzbfjxyjeprpnqgpdktmt3eecc" border="0" title="Counter" alt="Counter"></a>
+     </div>
     <!--BootStrap code goes here -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -1,0 +1,37 @@
+{% extends "index.html" %} {% block content %}
+<div class="text-center"> 
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong class="text-center">Media Fetched!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="text-center">
+        <img src="{{ url }}" class="rounded mx-auto d-block" width="480" height="480" alt="Instagram Media">
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        Fullname: {{ full_name }}<br><br>
+        Username: {{ owner_username }}<br><br>
+        Followers Count: {{ followers }}<br><br>
+        Following Count: {{ followees }}<br><br>
+        Private Account: {{ is_private }}<br><br>
+        Verified Account: {{ is_verified }}<br><br>
+        Bio: {{ bio }}<br><br>
+        External URL: {{ external_url }}<br><br>
+        Video: {{ is_video }}<br><br>
+        Caption: {{ caption }}<br><br>
+        Hashtags: {{ caption_hashtags }}<br><br>
+        Mentions: {{ caption_mentions }}<br><br>
+        Likes Count: {{ likes }}<br><br>
+        Comments Count: {{ comments }}<br><br>
+    </div>
+
+    <div class="text-center col-md-12 text-center btn-group"></div>
+    <a href="{{ media_url }}" class="text-center  btn btn-outline-primary" role="button" aria-disabled="true" target="_blank">Download Media [HD]</a>
+    <a href="{{ url_for('post') }}" class="btn btn-outline-primary" role="button" aria-disabled="true">Download another Media</a>
+    </div>
+
+</div>
+{% endblock %}

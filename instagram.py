@@ -5,6 +5,8 @@ from instaloader import Instaloader, Post
 
 L=Instaloader()
 
+INSTA_UA = 'Instagram 10.34.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)'
+
 def getID(username):
     url = "https://www.instagram.com/{}"
     r = requests.get(url.format(username))
@@ -16,7 +18,9 @@ def getID(username):
 
 def userDetails(userID):
     url = "https://i.instagram.com/api/v1/users/{}/info/"
-    r = requests.get(url.format(userID))
+    session=requests.Session()
+    session.headers={'user-agent': INSTA_UA}
+    r = session.get(url.format(userID))
     if r.ok:
         data = r.json()
         return data
@@ -27,7 +31,6 @@ def get_media_details(link):
     shortcode = link.split('/p/')[1].replace('/', '')
     post=Post.from_shortcode(L.context,shortcode)
     owner_profile=post.owner_profile
-    
     full_name=owner_profile.full_name
     followers=owner_profile.followers
     followees=owner_profile.followees
@@ -35,7 +38,6 @@ def get_media_details(link):
     is_private=owner_profile.is_private
     bio=owner_profile.biography
     external_url=owner_profile.external_url
-
     owner_username=post.owner_username
     url=post.url
     caption=post.caption
@@ -60,12 +62,12 @@ def get_media_details(link):
            is_private,
            bio,
            external_url,
-           owner_username, 
-           url, 
-           caption, 
-           caption_hashtags, 
-           caption_mentions, 
-           is_video, 
-           media_url, 
-           likes, 
+           owner_username,
+           url,
+           caption,
+           caption_hashtags,
+           caption_mentions,
+           is_video,
+           media_url,
+           likes,
            comments)

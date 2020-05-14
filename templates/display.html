@@ -17,22 +17,13 @@
 </div>
 
 <div class="text-center alert alert-primary" role="alert">
-    Username: {{ username }}<br><br>
-    Fullname: {{ fullname }}<br><br>
-    Biography: {{ bio }}<br><br>
-    Private Profile: {{ private_profile }}<br><br>
-    Verified Profile: {{ is_verified }}<br><br>
-    Anonymous Profile Pic: {{ anonymous_profile_pic }}<br><br>
-    Total Posts: {{ total_posts }}<br><br>
-    Followers: {{ followers }}<br><br>
-    Following: {{ following }}<br><br>
-    External URL: {{ external_url }}<br><br>
-    May be fraud profile: {{ report_fraud }}
+    Username: {{ username }}<br><br> Fullname: {{ fullname }}<br><br> Biography: {{ bio }}<br><br> Private Profile: {{ private_profile }}<br><br> Verified Profile: {{ is_verified }}<br><br> Total Posts: {{ total_posts }}<br><br> Followers: {{ followers
+    }}<br><br> Following: {{ following }}<br><br> External URL: {{ external_url }}<br><br>
 </div>
 
 <div class="col-md-12 text-center btn-group">
-  <a href="{{ hd_dp_url }}" class="btn btn-outline-primary" role="button" aria-disabled="true">HD DP</a>
-  <a href="{{ url_for('home') }}" class="btn btn-outline-primary" role="button" aria-disabled="true">Check another profile</a>
+    <a href="{{ hd_dp_url }}" class="btn btn-outline-primary" role="button" aria-disabled="true">HD DP</a>
+    <a href="{{ url_for('home') }}" class="btn btn-outline-primary" role="button" aria-disabled="true">Check another profile</a>
 </div>
 
 {% endblock %}

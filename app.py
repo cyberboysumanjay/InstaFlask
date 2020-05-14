@@ -15,6 +15,7 @@ def details():
     if request.method == 'POST':
         result = request.form
         username=(result['userid'])
+    '''
     id=''
     try:
         id=instagram.getID(username)
@@ -26,28 +27,27 @@ def details():
         user_data=instagram.userDetails(id)
     except Exception as e:
         print(e)
-    dp_url=user_data['user']['hd_profile_pic_versions'][0]['url']
-    hd_dp_url=user_data['user']['hd_profile_pic_url_info']['url']
-    username=user_data['user']['username']
-    fullname=user_data['user']['full_name']
-    private_profile=user_data['user']['is_private']
-    is_verified=user_data['user']['is_verified']
-    anonymous_profile_pic=user_data['user']['has_anonymous_profile_picture']
-    total_posts=user_data['user']['media_count']
-    followers=user_data['user']['follower_count']
-    following=user_data['user']['following_count']
-    bio=user_data['user']['biography']
-    if len(bio)==0:
-        bio='None'
-    report_fraud=user_data['user']['can_be_reported_as_fraud']
-    try:
-        external_url=user_data['user']['external_url']
-    except:
+    '''
+    profile = instagram.userDetails(username)
+    if profile is None:
+        return '<h1>Invalid Username</h1><br><h2>Please go back and enter a valid username to continue</p>'
+
+    dp_url = profile.profile_pic_url
+    hd_dp_url = profile.profile_pic_url #No Access to HD Photos without Login (F**k You Instagram!)
+    username = profile.username
+    fullname = profile.full_name
+    private_profile = profile.is_private
+    is_verified = profile.is_verified
+    total_posts = profile.mediacount
+    followers = profile.followers
+    following = profile.followees
+    bio = profile.biography 
+    if bio is None:
+        bio ='None'
+    external_url = profile.external_url
+    if external_url is None:
         external_url='None'
-    finally:
-        if len(external_url)==0:
-            external_url='None'
-    return render_template("display.html",dp_url=dp_url,username=username,fullname=fullname,private_profile=private_profile,is_verified=is_verified,anonymous_profile_pic=anonymous_profile_pic,total_posts=total_posts,followers=followers,following=following,bio=bio,external_url=external_url,report_fraud=report_fraud,hd_dp_url=hd_dp_url)
+    return render_template("display.html",dp_url=dp_url,username=username,fullname=fullname,private_profile=private_profile,is_verified=is_verified,total_posts=total_posts,followers=followers,following=following,bio=bio,external_url=external_url,hd_dp_url=hd_dp_url)
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():

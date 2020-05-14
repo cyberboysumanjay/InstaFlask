@@ -1,33 +1,19 @@
 #!/usr/bin/env python3
 import re
 import requests
-from instaloader import Instaloader, Post
+from instaloader import Instaloader, Post, Profile
 
 L=Instaloader()
 
-INSTA_UA = 'Instagram 10.34.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)'
-
-def getID(username):
-    url = "https://www.instagram.com/{}"
-    r = requests.get(url.format(username))
-    html = r.text
-    if r.ok:
-        return re.findall('"id":"(.*?)",', html)[0]
-    else:
-        return "invalid_username"
-
-def userDetails(userID):
-    url = "https://i.instagram.com/api/v1/users/{}/info/"
-    session=requests.Session()
-    session.headers={'user-agent': INSTA_UA}
-    r = session.get(url.format(userID))
-    if r.ok:
-        data = r.json()
-        return data
-    else:
-        return "NULL"
+def userDetails(username):
+    try:
+        profile = Profile.from_username(L.context, username)
+        return profile
+    except Exception:
+        return None
 
 def get_media_details(link):
+    link = link.split("?")[0]
     shortcode = link.split('/p/')[1].replace('/', '')
     post=Post.from_shortcode(L.context,shortcode)
     owner_profile=post.owner_profile
